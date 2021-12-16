@@ -1,6 +1,16 @@
 #include <stdio.h>
+#define SIZE 96
 
-int 
+void merge(int a[], int l, int mid, int h)
+{
+	int b[SIZE]; //auxiliary array
+	int i, j, k;
+	i = k = l;
+	j = mid + 1;
+	
+	while (i <= mid && j <= max)  {
+		if (a[i] < a[j])  {
+			b[k++] = 
 
 int main ()
 {
