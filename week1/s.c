@@ -1,7 +1,20 @@
 #include <stdio.h>
+#include <limits.h>
 
-void dijkstra(int n, int G[][n], int source, int t[][n-1]) 
+void dijkstra(int n, int G[][n], int source) 
 {
+	int distance[n], int included[n];
+	distance[source] = 0;
+	included[] = {0};
+	included[source] = 1;
+	int i;
+	
+	for (i = 1; i < n; ++i)  {
+		distance[i] = INT_MAX;
+	}
+	
+	for 	
+	
 	
 int main ()
 {
