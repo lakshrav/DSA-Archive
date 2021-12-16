@@ -8,13 +8,18 @@ int max(int a, int b)
 	return (a > b) ? a : b;
 }
 
-int find_lcs(char a[], char b[])
+void find_lcs(char a[], char b[])
 {
+	
 	int m, n;
 	m = strlen(a);
 	n = strlen(b);
 	int lcs[m + 1][n + 1];
-	int i, j;
+	int size = m < n? m : n; //returns the minimum length of the two
+
+	char final[size];	
+	int i, j, k = 0;
+
 	for (i = 0; i < m + 1; ++i) { 
 		for (j = 0; j < n + 1; ++j) {
 			lcs[i][j] = 0;
@@ -24,13 +29,19 @@ int find_lcs(char a[], char b[])
 		for (j = 0; j < n + 1; ++j)  {
 			if (i == 0 || j == 0)
 				lcs[i][j] = 0;
-			else if (a[i - 1] == b[j - 1])
+			else if (a[i - 1] == b[j - 1]) {
 				lcs[i][j] = lcs[i - 1][ j - 1] + 1;
+				final[k++] = a[i - 1];
+			}
 			else 
 				lcs[i][j] = max(lcs[i - 1][j], lcs[i][j - 1]);
 		}
 	}
-	return lcs[m][n];
+	final[k] = '\0';
+	printf("The LCS is of length %d: ", k);
+	
+	for (i = 0; i < k; ++i)  
+		printf("%c", final[i]);
 }
 
 int main ()
@@ -40,18 +51,7 @@ int main ()
 	scanf("%s%*c", a);
 	printf("Enter second string: ");
 	scanf("%s%*c", b);	
-	printf("LCS is %d\n", find_lcs(a, b));
+	find_lcs(a, b);
 	
 	return 0;
 }
-
-
-
-
-
-
-
-
-	
-
-	
