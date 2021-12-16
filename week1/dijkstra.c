@@ -26,7 +26,6 @@ void dijkstra(int n, int G[][n], int source, int distance[n])
 		included[i] = 0;
 	}
 	distance[source] = 0;
-	included[source] = 1;
 	
 	for (i = 0; i < n - 2; ++i)  {
 		min = min_dist(n, distance, included);
@@ -36,10 +35,6 @@ void dijkstra(int n, int G[][n], int source, int distance[n])
 			if (included[j] == 0 && G[min][j]  && distance[min] != INT_MAX && distance[min] + G[min][j] < distance[j]) 
 				distance[j] = distance[min] + G[min][j];
 		}
-	}
-	
-	for (i = 1; i < n; ++i)  {
-		printf("%d ", included[i]);
 	}
 }	
 	
