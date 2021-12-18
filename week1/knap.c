@@ -56,12 +56,22 @@ int main ()
 		pw[i] = (float) p[i] / w[i];
 	}
 	//sorting the pw array
-	for (i = 0; i < n; ++i)  
-		printf("%.2f\n",pw[i]); 
 	int j;
-	mergesort(pw,0,n-1);
 	for (i = 0; i < n; ++i)  
 		printf("%.2f\n",pw[i]); 
+	int max, sum = 0;
+	printf("Enter the maximum capacity: ");
+	scanf("%d", &max);
+	int final[n];
+	for (i = 0; i < n; ++i)  {	
+		if (sum > max)  {
+			break;
+		}
+		sum = sum + w[n - i];
+		final[i] = 
+
+		
+
 }
 
 
