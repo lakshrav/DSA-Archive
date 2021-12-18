@@ -13,14 +13,15 @@ int main ()
 			scanf("%lld", &a[i]);
 		for (i = 0; i < n; ++i)  {
 			for (j = 0; j + 1 <=n; ++j)  {
-				if (a[j] % a[i] == 0 && a[j + 1]%a[i] == 0)
+				if ((a[j] % a[i] == 0 && a[j + 1]%a[i] == 0)||(a[j]%a[i] != 0 && a[j+1]%a[i] != 0))
 					break;
-				else if (a[j]%a[i] != 0 && a[j+1]%a[i] != 0)
-					break;
+					printf("loop\n");
 			}
+			printf("%lld", j);
 			if (j + 1 > n)  {
 				res[p] = a[i];
 				flag = 1;
+				printf("hi");
 				break;
 			}
 		}
@@ -28,9 +29,9 @@ int main ()
 			res[p] = 0;
 		}
 	}
-	for (i = 0; i < t; ++i)  {
+/*	for (i = 0; i < t; ++i)  {
 		printf("%lld\n", res[i]);
-	}
+	}*/
 	return 0;
 }
 	
