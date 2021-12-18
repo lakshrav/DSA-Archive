@@ -15,11 +15,6 @@ int cost[8][8] =  {
 int t[2][6];
 int near[8] = {I, I, I, I, I, I, I, I};
 
-int findmin(int a, int b)
-{
-	return a < b ? a : b;
-}
-
 int main ()
 {
 	int i, j, k, u, v;
