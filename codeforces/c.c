@@ -2,15 +2,15 @@
 
 int main ()
 {
-	int t, n, p, i, j, flag = 0;
-	scanf("%d", &t);
-	int res[t];
+	long long int t, n, p, i, j, flag = 0;
+	scanf("%lld", &t);
+	long long int res[t];
 	for (p = 0; p < t; ++p)  {
 		flag = 0;
-		scanf("%d", &n);
-		int a[n];
+		scanf("%lld", &n);
+		long long int a[n];
 		for (i = 0; i < n; ++i)  
-			scanf("%d", &a[i]);
+			scanf("%lld", &a[i]);
 		for (i = 0; i < n; ++i)  {
 			for (j = 0; j + 1 <=n; ++j)  {
 				if (a[j] % a[i] == 0 && a[j + 1]%a[i] == 0)
@@ -29,7 +29,7 @@ int main ()
 		}
 	}
 	for (i = 0; i < t; ++i)  {
-		printf("%d\n", res[i]);
+		printf("%lld\n", res[i]);
 	}
 	return 0;
 }
