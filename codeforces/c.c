@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 int main ()
 {
@@ -9,29 +10,28 @@ int main ()
 		flag = 0;
 		scanf("%lld", &n);
 		long long int a[n];
-		for (i = 0; i < n; ++i)  
+		for (i = 0; i < n; ++i)   
 			scanf("%lld", &a[i]);
+		int max = INT_MIN;
+		
 		for (i = 0; i < n; ++i)  {
-			for (j = 0; j + 1 <=n; ++j)  {
-				if ((a[j] % a[i] == 0 && a[j + 1]%a[i] == 0)||(a[j]%a[i] != 0 && a[j+1]%a[i] != 0))
+			if (a[i] > max)  
+				max = a[i];
+		}
+		int d = 2;
+		for (i = 0; i < n; ++i)  {
+			if ((a[i] % d == 0 && a[i+1]%d == 0)||(a[i]%d != 0 && a[i+1]%d != 0)) {
+				d++;	
+				if (d > max)
 					break;
-					printf("loop\n");
-			}
-			printf("%lld", j);
-			if (j + 1 > n)  {
-				res[p] = a[i];
-				flag = 1;
-				printf("hi");
-				break;
 			}
 		}
-		if (flag == 0)  {
-			res[p] = 0;
-		}
+		if (
+
 	}
-/*	for (i = 0; i < t; ++i)  {
+	for (i = 0; i < t; ++i)  {
 		printf("%lld\n", res[i]);
-	}*/
+	}
 	return 0;
 }
 	
