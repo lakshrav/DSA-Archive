@@ -15,6 +15,9 @@ int main ()
 		}
 		i += a[i];
 	}
-	printf("NO");
+	if (i + 1 == num)  
+		printf("YES");
+	else
+		printf("NO");
 	return 0;
 }
